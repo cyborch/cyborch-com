@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Anders Borch</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width'>
+    <meta name='viewport' content='initial-scale=1.0'>
+    <meta name='og:url' content='https://cyborch.com/'>
+    <meta name='og:title' content='Anders Borch'>
+    <meta name='og:image' content='https://cyborch.com/background.jpg'>
+    <meta name='og:image:width' content='2048'>
+    <meta name='og:image:height' content='1536'>
+    <meta name='profile:first_name' content='Anders'>
+    <meta name='profile:last_name' content='Borch'>
+    <meta name='profile:gender' content='male'>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Anders Borch",
+      "url": "https://cyborch.com/",
+      "sameAs": [
+        "https://linkedin.com/in/cyborch",
+        "https://twitter.com/cyborch",
+        "https://www.facebook.com/anders.cyborch",
+        "https://www.instagram.com/cyborch/",
+        "https://github.com/cyborch",
+        "https://keybase.io/cyborch"
+      ]
+    }
+    </script>
+    <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+    <style type='text/css'>
+    @font-face {
+      font-family: 'Didact Gothic';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Didact Gothic Regular'), local('DidactGothic-Regular'), url(fonts/Didact-Gothic.ttf) format('truetype');
+    }
+    html {
+      color: white;
+    }
+    h1 {
+      font-size: 90px;
+      margin-bottom: 20px;
+      font-weight: lighter;
+    }
+    div.contact {
+      z-index: 3;
+      position: fixed;
+      top: 20px;
+      left: 40px;
+      font-family: Futura-Light, 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      border-radius: 4px;
+      margin: 8px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    a:hover {
+      color: #2b3f40;
+      border-color: #2b3f40;
+    }
+    div.cyborg {
+      position: absolute;
+      z-index: 2;
+      width: 200px;
+      height: 200px;
+      bottom: 0;
+      right: 0;
+    }
+    back {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(background-small.jpg) no-repeat right center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    back.loaded {
+      background: url(background.jpg) no-repeat right center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    img.keybase {
+      width: 1em;
+      height: 1em;
+    }
+    div.desktop-only {
+      display: inline;
+      position: fixed;
+      z-index: 2;
+      height: 2em;
+      bottom: 40px;
+      left: 40px;
+      font-family: Futura-Light, 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
+    }
+    div.desktop-only a {
+      color: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 26em;
+        background-color: rgba(175, 175, 175, 0.3);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -13em;
+        opacity: 0;
+        transition: opacity 1s;
+        white-space: nowrap;
+    }
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(175, 175, 175, 0.3) transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+    /* ----------- Fade In ----------- */
+    /* Keyframes for the fade-in */
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+    .fade-in {
+      opacity:0;
+      opacity: 1 \9; /*just in case ie*/
+      -webkit-animation:fadeIn ease-in 1;
+      -moz-animation:fadeIn ease-in 1;
+      animation:fadeIn ease-in 1;
+
+      -webkit-animation-fill-mode:forwards;
+      -moz-animation-fill-mode:forwards;
+      animation-fill-mode:forwards;
+
+      -webkit-animation-duration:0.3s;
+      -moz-animation-duration:0.3s;
+      animation-duration:0.3s;
+    }
+    .fade-in.one {
+      -webkit-animation-delay: 0.1s;
+      -moz-animation-delay: 0.1s;
+      animation-delay: 0.1s;
+    }
+    .fade-in.two {
+      -webkit-animation-delay: 0.3s;
+      -moz-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+
+    .fade-in.three {
+      -webkit-animation-delay: 0.5s;
+      -moz-animation-delay: 0.5s;
+      animation-delay: 0.5s;
+    }
+    .fade-in.four {
+      -webkit-animation-delay: 0.7s;
+      -moz-animation-delay: 0.7s;
+      animation-delay: 0.7s;
+    }
+
+    .fade-in.five {
+      -webkit-animation-delay: 1.0s;
+      -moz-animation-delay:1.0s;
+      animation-delay: 1.0s;
+    }
+
+    .fade-in.six {
+      -webkit-animation-delay: 1.2s;
+      -moz-animation-delay: 1.2s;
+      animation-delay: 1.2s;
+    }
+
+    .fade-in.seven {
+      -webkit-animation-delay: 1.4s;
+      -moz-animation-delay: 1.4s;
+      animation-delay: 1.4s;
+    }
+
+    .fade-in.eight {
+      -webkit-animation-delay: 1.6s;
+      -moz-animation-delay: 1.6s;
+      animation-delay: 1.6s;
+    }
+
+    .fade-in.nine {
+      -webkit-animation-delay: 1.8s;
+      -moz-animation-delay: 1.8s;
+      animation-delay: 1.8s;
+    }
+    
+    .fade-in.ten {
+      -webkit-animation-delay: 2.0s;
+      -moz-animation-delay: 2.0s;
+      animation-delay: 2.0s;
+    }
+
+    .fade-in.eleven {
+      -webkit-animation-delay: 2.2s;
+      -moz-animation-delay: 2.2s;
+      animation-delay: 2.2s;
+    }
+    
+    .fade-in.twelve {
+      -webkit-animation-delay: 2.4s;
+      -moz-animation-delay: 2.4s;
+      animation-delay: 2.4s;
+    }
+    
+    .fade-in.thirteen {
+      -webkit-animation-delay: 2.6s;
+      -moz-animation-delay: 2.6s;
+      animation-delay: 2.6s;
+    }
+    
+    /* ----------- iPhone 5 and 5S ----------- */
+    @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+      html {
+        color: white;
+      }
+      back {
+        background: url(background-mobile.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      back.loaded {
+        background: url(background-mobile.jpg) no-repeat right center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      div.contact {
+        left: 0px;
+        position: relative;
+      }
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-top: -30px;
+        margin-bottom: 10px;
+      }
+      a {
+        display: block;
+        font-weight: bolder;
+        margin-right: 10px;
+      }
+      div.cyborg {
+        position: relative;
+        margin-top: 60px;
+        width: 100%;
+        height: 40px;
+      }
+      div.desktop-only {
+        font-family: Futura-Light, 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
+        display: none;
+      }
+    }
+    /* ----------- iPhone 6 ----------- */
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
+      html {
+        background: url(background-mobile.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color: white;
+      }
+      back {
+        background: url(background-mobile.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      back.loaded {
+        background: url(background-mobile.jpg) no-repeat right center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      div.contact {
+        left: 0px;
+        position: relative;
+      }
+      h1 {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+      }
+      a {
+        display: block;
+        font-weight: bolder;
+      }
+      div.cyborg {
+        position: relative;
+        margin-top: 60px;
+        width: 100%;
+        height: 40px;
+      }
+      div.desktop-only {
+        display: none;
+      }
+    }
+    </style>
+    <script type="text/javascript">
+    var setIt = function () {
+      var assembled = 'anders';
+      assembled = assembled + '@';
+      assembled = assembled + 'cyborch.com';
+      var link = document.getElementById('rjqnkrs');
+      link.href = 'ma' + 'ilto:' + assembled;
+      var display = document.getElementById('display-cfphyhb');
+      display.innerHTML = assembled;
+      
+      var downloadingImage = new Image();
+      downloadingImage.onload = function(){
+        var back = document.querySelector('back');
+        back.classList.add('loaded');
+      };
+      downloadingImage.src = "background-small.jpg";
+
+      var downloadingImage2 = new Image();
+      downloadingImage2.onload = function(){
+        console.log('');
+      };
+      downloadingImage2.src = "keybase-hover.png";
+    }
+    var keybaseOver = function () {
+      var img = document.querySelector("img.keybase");
+      img.src = "keybase-hover.png";
+    }
+    var keybaseOut = function () {
+      var img = document.querySelector("img.keybase");
+      img.src = "keybase.png";
+    }
+    </script>
+  </head>
+  <body onload='setIt()'>
+    <back></back>
+    <div class='contact'>
+      <h1 class='fade-in one'>Anders Borch</h1>
+      <p>
+        <a class='fade-in two' href='anders-borch.vcf'><i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;&nbsp;vCard</a>
+
+        <a class='fade-in three' href='tel://+14089155121'><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+1 (408) 915-5121</a>
+        <a class='fade-in four' id='rjqnkrs' href='#'><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<span id='display-cfphyhb'></span></a>
+        <a class='fade-in five' href='https://linkedin.com/in/cyborch'><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
+        <a class='fade-in six' href='https://twitter.com/cyborch'><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;@cyborch</a>
+        <a class='fade-in seven' href='https://github.com/cyborch'><i class="fa fa-github" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
+        <a class='fade-in eight' href='https://www.facebook.com/anders.cyborch'><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;&nbsp;anders.cyborch</a>
+        <a class='fade-in nine' onclick='Skype.tryAnalyzeSkypeUri("chat", "0");' href='skype:cyborch?chat'><i class="fa fa-skype" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
+        <a class='fade-in ten' href='https://keybase.io/cyborch' onmouseover='keybaseOver()' onmouseout='keybaseOut()'><img class='keybase' src='keybase.png'>&nbsp;&nbsp;cyborch</a>
+      </p>
+    </div>
+    <div class='desktop-only'>
+      <a class='fade-in eleven' href='/dotfiles'><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;dotfiles</a>
+      <div class='tooltip'>
+        <span class='tooltiptext'>F8F7 2899 6527 DF19 29B9 A352 C960 1A71 6A27 5529</span>
+        <a class='fade-in twelve' href='http://keyserver1.pgp.com/vkd/DownloadKey.event?keyid=0xC9601A716A275529'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;public key</a>
+      </div>
+      <a class='fade-in thirteen' href='/cv.pdf'><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;resume</a>
+    </div>
+    <div class='cyborg' onclick='location.href = "cyborg.gif"'></div>
+  </body>
+</html>

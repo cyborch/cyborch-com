@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="github.css">
+    <script src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>Anders's dotfiles</title>
+    <style>
+    body {
+      margin: 30px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: lighter;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <h1>Anders's dotfiles</h1>
+    <p>These are my dotfiles, which may or may not be helpful to you.</p>
+
+    <h2>Tools</h2>
+    
+    <p>
+      There are a number of tools I always seem to end up using. Some of these change over time. Some seem to more or less stay the same. For a while, I preferred MacPorts. These days I prefer Homebrew. Mostly, things stay more or less the same.
+    </p>
+    
+    <p>You probably want to install these manually before proceeding:</p>
+    
+    <p>
+      <ul>
+        <li><a href="https://itunes.apple.com/dk/app/xcode/id497799835?mt=12">Xcode</a></li>
+        <li><a href="https://nodejs.org">node.js</a></li>
+        <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker</a></li>
+      </ul>
+    </p>
+    
+    <h2>TL;DR</h2>
+    To set up your local computer just the way I like it, run:
+    <pre><code>bash <(curl -s https://cyborch.com/dotfiles/getall.sh)</code></pre>
+
+    <h2>On to the dotfiles</h2>
+
+    <p>The easiest way to use any one of these is with curl:</p>
+    <pre><code class="bash">cd;curl -O https://cyborch.com/dotfiles/{.whatever}</code></pre>
+    
+    <h3>.bash_profile</h3>
+    <p><em>Why?</em></p>
+    <p>There are several things going on here:</p>
+    <p>
+      <ul>
+        <li>Bash <a href="https://github.com/scop/bash-completion">completions</a> - particularly, after adding <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git-completion.bash</a> to <pre style="display: inline"><code style="display: inline">/usr/local/etc/bash_completion.d</code></pre></li>
+        <li><a href="https://fastlane.tools/">Fastlane</a> is essential for me in my iOS development.</li>
+        <li>Despite using <a href="https://atom.io/">Atom</a> for most of my web/node development, I still use <a href="https://macromates.com/">TextMate</a> as my general purpose editor.</li>
+      </ul>
+    </p>
+    <pre><code class="bash">#!/bin/bash
+
+# Load bash completions
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# TextMate is still my favorite general purpose editor
+export EDITOR="mate -w"</code></pre>
+    <p>Raw <a href=".bash_profile">.bash_profile</a></p>
+
+    <h3>.gitconfig</h3>
+    <p><em>Why?</em></p>
+    <p>
+      There are a lot of things git can do from the command line which to a large degree render UI tools irellevant. Formatting log output to add color and tree view goes a long way towards that. Also included in this is a set of shortcuts that I have committed to muscle memory since the days when I was using SVN. Added them as aliases in git just made sense.
+    </p>
+  
+    <pre><code>[user]
+  name = YOUR_NAME
+  email = YOUR_CENTRAL_REPO_USER_EMAIL
+[core]
+  excludesfile = ABSOLUTE_PATH_TO_HOME/.gitignore_global
+[alias]
+  # Make rebase safe on osx https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+  rebase = -c core.trustctime=false rebase
+
+  # A couple of shortcuts because I used to use svn
+  ci = commit
+  co = checkout
+  st = status
+
+  # Log, but with tree, colors, and changed files list
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --name-status
+
+  # Log, just with tree
+  tree = log --graph --oneline --all --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # Pull HEAD of master in all submodules
+  sp = submodule foreach --recursive git fetch origin --tags && git checkout master && git pull
+  
+  # Initialize all submodules
+  su = submodule update --init --recursive
+
+  # Clone submodules when cloning a repository
+  clone = clone --recurse
+
+  # Words that are too long for me to bother with them
+  br = branch
+  ch = cherry-pick
+
+  # Rebase local changes on top of anything you pull without nagging about local uncommitted changes
+  pr = !git stash && git pull --rebase && git stash pop
+
+  # Fast forward pull - should be the default imho
+  pf = pull --ff-only
+
+  # Set upstream when pushing - should be default imho
+  pu = push -u
+
+  # Merge without implicitly creating merge commits
+  mf = merge --ff-only
+  
+  # Delete a remote branch
+  bd = push origin --delete
+
+[credential]
+  # Use OSX keychain to remember passwords
+  helper = osxkeychain
+
+[push]
+  # Assume that local branch name matches remote branch name
+  default = current
+
+[hub]
+  # Use https for github (obviously)
+  protocol = https</code></pre>
+    <p>Raw <a href=".gitconfig">.gitconfig</a></p>
+
+    <h3>.gitignore_global</h3>
+    <p><em>Why?</em></p>
+    <p>Because we specified it in .gitconfig and because everyone on OSX should ignore .DS_Store files.</p>
+    <pre><code># emacs backup file should always be ignored
+*~
+
+# OSX folder metadata is everywhere and should always be ignored
+.DS_Store
+
+# Xcode stores its state in this subfolder, and too many people forget to ignore it
+*xcuserdata*</code></pre>
+    <p>Raw <a href=".gitignore_global">.gitignore_global</a></p>
+   
+    <h3>.screenrc</h3>
+    <p><em>Why?</em></p>
+    <p>Because telnet to a serial device by default doesn't provice the capabilities we are used to in a terminal. This allows us to scroll normally.</p>
+    <pre><code>termcapinfo xterm* ti@:te@</code></pre>
+    <p>Raw <a href=".screenrc">.screenrc</a></p>
+    
+    <h3>.ssh/config</h3>
+    <p><em>Why?</em></p>
+    <p><ul style="line-height: 1.5em;padding-left: 0">To be honest, this one doesn't really make sense to anyone but me, personally, but it can serve as inspiration on how to set up your own <pre style="display: inline"><code style="display: inline">.ssh/config</code></pre> file.</ul></p>
+    <pre><code># Keep connections alive by sending a null packet every 30 seconds
+ServerAliveInterval 30
+Host wedding
+  User wedding
+  HostName borch-andersen.dk
+  # Allow editing remote files with rmate
+  RemoteForward 52698 localhost:52698
+Host magellanic
+  User cyborch
+  HostName magellanic.cyborch.com
+  # Allow editing remote files with rmate
+  RemoteForward 52698 localhost:52698</code></pre>
+    <p>Raw <a href=".ssh/config">.ssh/config</a></p>
+  </body>
+</html>
