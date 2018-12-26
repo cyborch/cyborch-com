@@ -20,22 +20,28 @@ echo ""
 
 cd
 echo "Getting .bash_profile..."
-curl -O http://cyborch.com/dotfiles/.bash_profile
+curl -O https://cyborch.com/dotfiles/.bash_profile
 echo "Getting .gitconfig..."
 curl http://cyborch.com/dotfiles/.gitconfig 2>/dev/null | sed "s/YOUR_NAME/$full_name/;s/YOUR_CENTRAL_REPO_USER_EMAIL/$email/" > .gitconfig
 echo "Getting .gitignore_global..."
-curl -O http://cyborch.com/dotfiles/.gitignore_global
+curl -O https://cyborch.com/dotfiles/.gitignore_global
 echo "Getting .screenrc..."
-curl -O http://cyborch.com/dotfiles/.screenrc
+curl -O https://cyborch.com/dotfiles/.screenrc
+echo "Getting .atom..."
+curl -O https://cyborch.com/dotfiles/dotatom.tgz && tar xzf dotatom.tgz
+rm -f dotatom.tgz
 
 if [[ `uname` == "Darwin" ]] ; then
-  if [[ ! has xcode-select ]] ; then
-    echo "Install Xcode first!"
+  if has "xcode-select" ; then
+  else
+    echo 'Install Xcode first!'
     exit -1
   fi
 
   echo "Installing Xcode CLI..."
   xcode-select --install
+  echo -n "Press return after installation has completed"
+  read ok
 
   echo "Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -59,7 +65,7 @@ echo -n "Install .ssh/config? (no): "
 read should_install_ssh_config
 
 if [[ "$should_install_ssh_config" == "yes" ]] ; then
-  mkdir -p .ssh && chmod 600 .ssh
-  (cd .ssh && curl -O http://cyborch.com/dotfiles/.ssh/config)
+  mkdir -p .ssh && chmod 700 .ssh
+  (cd .ssh && curl -O https://cyborch.com/dotfiles/.ssh/config)
 fi
 

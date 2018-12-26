@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Anders Borch</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/icon.png">
     <meta name='viewport' content='width=device-width'>
     <meta name='viewport' content='initial-scale=1.0'>
     <meta name='og:url' content='https://cyborch.com/'>
@@ -25,7 +27,8 @@
         "https://www.facebook.com/anders.cyborch",
         "https://www.instagram.com/cyborch/",
         "https://github.com/cyborch",
-        "https://keybase.io/cyborch"
+        "https://keybase.io/cyborch",
+        "https://medium.com/@anders.borch"
       ]
     }
     </script>
@@ -35,7 +38,7 @@
       font-family: 'Didact Gothic';
       font-style: normal;
       font-weight: 400;
-      src: local('Didact Gothic Regular'), local('DidactGothic-Regular'), url(fonts/Didact-Gothic.ttf) format('truetype');
+      src: url(/fonts/Didact-Gothic.ttf) format('truetype');
     }
     html {
       color: white;
@@ -50,14 +53,14 @@
       position: fixed;
       top: 20px;
       left: 40px;
-      font-family: Futura-Light, 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
+      font-family: 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
     }
     a {
       display: inline-block;
       text-decoration: none;
       color: white;
       border: 1px solid white;
-      border-radius: 4px;
+      border-radius: 8px;
       margin: 8px;
       padding-left: 20px;
       padding-right: 20px;
@@ -83,6 +86,20 @@
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: -2;
+      background: url(background-small.jpg) no-repeat right center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    largeback {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
       background: url(background-small.jpg) no-repeat right center fixed;
       -webkit-background-size: cover;
@@ -90,7 +107,7 @@
       -o-background-size: cover;
       background-size: cover;
     }
-    back.loaded {
+    largeback.loaded {
       background: url(background.jpg) no-repeat right center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -105,10 +122,9 @@
       display: inline;
       position: fixed;
       z-index: 2;
-      height: 2em;
       bottom: 40px;
       left: 40px;
-      font-family: Futura-Light, 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
+      font-family: 'Didact Gothic', 'Trebuchet MS', Arial, sans-serif;
     }
     div.desktop-only a {
       color: rgba(255,255,255,0.25);
@@ -150,6 +166,7 @@
         visibility: visible;
         opacity: 1;
     }
+    
     /* ----------- Fade In ----------- */
     /* Keyframes for the fade-in */
     @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -246,7 +263,20 @@
       -moz-animation-delay: 2.6s;
       animation-delay: 2.6s;
     }
-    
+
+    .fade-in.fourteen {
+      -webkit-animation-delay: 2.8s;
+      -moz-animation-delay: 2.8s;
+      animation-delay: 2.8s;
+    }
+
+    .fade-in.fifteen {
+      -webkit-animation-delay: 2.8s;
+      -moz-animation-delay: 2.8s;
+      animation-delay: 2.8s;
+    }
+
+
     /* ----------- iPhone 5 and 5S ----------- */
     @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
       html {
@@ -259,12 +289,11 @@
         -o-background-size: cover;
         background-size: cover;
       }
-      back.loaded {
-        background: url(background-mobile.jpg) no-repeat right center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      largeback {
+        display: none;
+      }
+      largeback.loaded {
+        display: none;
       }
       div.contact {
         left: 0px;
@@ -309,12 +338,11 @@
         -o-background-size: cover;
         background-size: cover;
       }
-      back.loaded {
-        background: url(background-mobile.jpg) no-repeat right center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      largeback {
+        display: none;
+      }
+      largeback.loaded {
+        display: none;
       }
       div.contact {
         left: 0px;
@@ -339,6 +367,7 @@
         display: none;
       }
     }
+    
     </style>
     <script type="text/javascript">
     var setIt = function () {
@@ -351,14 +380,17 @@
       display.innerHTML = assembled;
       
       var downloadingImage = new Image();
-      downloadingImage.onload = function(){
-        var back = document.querySelector('back');
-        back.classList.add('loaded');
+      var shouldFade = false;
+      downloadingImage.onload = function() {
+        const back = document.getElementsByTagName("largeback")[0];
+        back.classList.add("loaded");
+        if (shouldFade) back.classList.add("fade-in");
       };
-      downloadingImage.src = "background-small.jpg";
+      downloadingImage.src = "background.jpg";
+      shouldFade = !downloadingImage.complete;
 
       var downloadingImage2 = new Image();
-      downloadingImage2.onload = function(){
+      downloadingImage2.onload = function() {
         console.log('');
       };
       downloadingImage2.src = "keybase-hover.png";
@@ -371,32 +403,72 @@
       var img = document.querySelector("img.keybase");
       img.src = "keybase.png";
     }
+    
+    fetch("https://freegeoip.net/json/", {
+
+    }).then((res) => {
+      return res.json();
+    }).then((out) => {
+        var a = document.getElementById("cv-link");
+        var title = document.getElementById("cv-title");
+        if (out.country_code == "US") {
+          a.href = "/cv.pdf";
+        } else {
+          a.href = "/cv.a4.pdf";
+          if (out.country_code == "DK") {
+            title.textContent = "cv";
+          }
+        }
+    }).catch(err => {
+      console.log("Failed getting country code:", err);
+    });
+    
+    var copyToClipboard = () => {
+      const toxtip = document.getElementById('toxtip');
+      const tip = toxtip.textContent;
+      const el = document.createElement('textarea');
+      el.value = tip;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      toxtip.textContent = 'Copied to clipboard';
+      setTimeout(function() {
+        toxtip.textContent = tip;
+        window.open('https://tox.chat');
+      }, 2000);
+    };
     </script>
   </head>
   <body onload='setIt()'>
     <back></back>
+    <largeback></largeback>
     <div class='contact'>
       <h1 class='fade-in one'>Anders Borch</h1>
       <p>
         <a class='fade-in two' href='anders-borch.vcf'><i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;&nbsp;vCard</a>
-
-        <a class='fade-in three' href='tel://+14089155121'><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+1 (408) 915-5121</a>
-        <a class='fade-in four' id='rjqnkrs' href='#'><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<span id='display-cfphyhb'></span></a>
-        <a class='fade-in five' href='https://linkedin.com/in/cyborch'><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
-        <a class='fade-in six' href='https://twitter.com/cyborch'><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;@cyborch</a>
-        <a class='fade-in seven' href='https://github.com/cyborch'><i class="fa fa-github" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
-        <a class='fade-in eight' href='https://www.facebook.com/anders.cyborch'><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;&nbsp;anders.cyborch</a>
-        <a class='fade-in nine' onclick='Skype.tryAnalyzeSkypeUri("chat", "0");' href='skype:cyborch?chat'><i class="fa fa-skype" aria-hidden="true"></i>&nbsp;&nbsp;cyborch</a>
-        <a class='fade-in ten' href='https://keybase.io/cyborch' onmouseover='keybaseOver()' onmouseout='keybaseOut()'><img class='keybase' src='keybase.png'>&nbsp;&nbsp;cyborch</a>
+        <a class='fade-in three' id='cv-link' href='/cv.pdf'><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<span id='cv-title'>resum&eacute;</span></a>
+        <a class='fade-in four' href='tel://+4550182053'><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+45 50 18 20 53</a>
+        <a class='fade-in five' id='rjqnkrs' href='#'><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<span id='display-cfphyhb'></span></a>
+        <a class='fade-in six' onclick='Skype.tryAnalyzeSkypeUri("chat", "0");' href='skype:cyborch?chat'><i class="fa fa-skype" aria-hidden="true"></i>&nbsp;&nbsp;skype</a>
+        <a class='fade-in seven' href='https://linkedin.com/in/cyborch'><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;linkedin</a>
+        <a class='fade-in eight' href='https://twitter.com/cyborch'><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;twitter</a>
+        <a class='fade-in nine' href='https://github.com/cyborch'><i class="fa fa-github" aria-hidden="true"></i>&nbsp;&nbsp;github</a>
+        <a class='fade-in ten' href='https://www.facebook.com/anders.cyborch'><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;&nbsp;facebook</a>
+        <a class='fade-in eleven' href='https://keybase.io/cyborch' onmouseover='keybaseOver()' onmouseout='keybaseOut()'><img class='keybase' src='keybase.png'>&nbsp;&nbsp;keybase</a>
       </p>
     </div>
     <div class='desktop-only'>
-      <a class='fade-in eleven' href='/dotfiles'><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;dotfiles</a>
+      <a class='fade-in twelve' href='/dotfiles'><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;dotfiles</a>
       <div class='tooltip'>
         <span class='tooltiptext'>F8F7 2899 6527 DF19 29B9 A352 C960 1A71 6A27 5529</span>
-        <a class='fade-in twelve' href='http://keyserver1.pgp.com/vkd/DownloadKey.event?keyid=0xC9601A716A275529'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;public key</a>
+        <a class='fade-in thirteen' href='http://keyserver1.pgp.com/vkd/DownloadKey.event?keyid=0xC9601A716A275529'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;public key</a>
       </div>
-      <a class='fade-in thirteen' href='/cv.pdf'><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;resume</a>
+      <div class='tooltip' style='cursor: alias'>
+        <span class='tooltiptext' id='toxtip' style='width: 44em; margin-left:-22em'>8A6843920BD353AFECD2F3A9EE3469ACEC989FB0EB8CE5C1ED19270C8D961E7F43082CAE425A</span>
+        <a class='fade-in fourteen' onclick='copyToClipboard()' target='_blank'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;tox</a>
+      </div>
+
     </div>
     <div class='cyborg' onclick='location.href = "cyborg.gif"'></div>
   </body>
