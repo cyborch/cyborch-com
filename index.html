@@ -166,7 +166,7 @@
         visibility: visible;
         opacity: 1;
     }
-    
+
     /* ----------- Fade In ----------- */
     /* Keyframes for the fade-in */
     @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -239,7 +239,7 @@
       -moz-animation-delay: 1.8s;
       animation-delay: 1.8s;
     }
-    
+
     .fade-in.ten {
       -webkit-animation-delay: 2.0s;
       -moz-animation-delay: 2.0s;
@@ -251,13 +251,13 @@
       -moz-animation-delay: 2.2s;
       animation-delay: 2.2s;
     }
-    
+
     .fade-in.twelve {
       -webkit-animation-delay: 2.4s;
       -moz-animation-delay: 2.4s;
       animation-delay: 2.4s;
     }
-    
+
     .fade-in.thirteen {
       -webkit-animation-delay: 2.6s;
       -moz-animation-delay: 2.6s;
@@ -322,7 +322,7 @@
       }
     }
     /* ----------- iPhone 6 ----------- */
-    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
       html {
         background: url(background-mobile.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -367,7 +367,7 @@
         display: none;
       }
     }
-    
+
     </style>
     <script type="text/javascript">
     var setIt = function () {
@@ -378,7 +378,7 @@
       link.href = 'ma' + 'ilto:' + assembled;
       var display = document.getElementById('display-cfphyhb');
       display.innerHTML = assembled;
-      
+
       var downloadingImage = new Image();
       var shouldFade = false;
       downloadingImage.onload = function() {
@@ -403,8 +403,8 @@
       var img = document.querySelector("img.keybase");
       img.src = "keybase.png";
     }
-    
-    fetch("https://freegeoip.net/json/", {
+
+    fetch("https://freegeoip.cyborch.com/json/", {
 
     }).then((res) => {
       return res.json();
@@ -422,7 +422,7 @@
     }).catch(err => {
       console.log("Failed getting country code:", err);
     });
-    
+
     var copyToClipboard = () => {
       const toxtip = document.getElementById('toxtip');
       const tip = toxtip.textContent;
@@ -462,7 +462,7 @@
       <a class='fade-in twelve' href='/dotfiles'><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;dotfiles</a>
       <div class='tooltip'>
         <span class='tooltiptext'>F8F7 2899 6527 DF19 29B9 A352 C960 1A71 6A27 5529</span>
-        <a class='fade-in thirteen' href='http://keyserver1.pgp.com/vkd/DownloadKey.event?keyid=0xC9601A716A275529'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;public key</a>
+        <a class='fade-in thirteen' href='https://keys.openpgp.org/search?q=anders@cyborch.com'><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;public key</a>
       </div>
       <div class='tooltip' style='cursor: alias'>
         <span class='tooltiptext' id='toxtip' style='width: 44em; margin-left:-22em'>8A6843920BD353AFECD2F3A9EE3469ACEC989FB0EB8CE5C1ED19270C8D961E7F43082CAE425A</span>
