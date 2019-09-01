@@ -142,10 +142,10 @@ small-screen-h1-color = #555555
   .backgroundclip h1 {
     position absolute
     top 320px
-    left 60px
-    background: small-screen-h1-color
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    left 30px
+    background: none !important
+    color: small-screen-h1-color
+    background-color: rgba(0,0,0,0) !important
     font-size 70pt
     line-height 70pt
   }
@@ -159,10 +159,10 @@ small-screen-h1-color = #555555
   .backgroundclip h1 {
     position absolute
     top 280px
-    left 60px
-    background: small-screen-h1-color
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    left 30px
+    background: none !important
+    color: small-screen-h1-color
+    background-color: rgba(0,0,0,0) !important
     font-size 50pt
     line-height 50pt
   }
@@ -181,10 +181,10 @@ small-screen-h1-color = #555555
   .backgroundclip h1 {
     position absolute
     top 220px
-    left 60px
-    background: small-screen-h1-color
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    left 30px
+    background-image: none !important
+    color: small-screen-h1-color
+    background-color: rgba(0,0,0,0) !important
     font-size 40pt
     line-height 40pt
   }
