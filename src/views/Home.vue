@@ -170,6 +170,10 @@ small-screen-h1-color = #555555
     font-size 50pt
     line-height 50pt
   }
+
+  #about-link {
+    display none
+  }
 }
 
 @media only screen and (max-device-width: 320px) {
@@ -193,6 +197,10 @@ small-screen-h1-color = #555555
     -webkit-text-fill-color: small-screen-h1-color
     font-size 40pt
     line-height 40pt
+  }
+
+  #about-link {
+    display none
   }
 
 }
