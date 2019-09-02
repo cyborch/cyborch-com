@@ -182,7 +182,7 @@ export default class Contact extends Vue {
   to {left: 100%}
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-device-width: 360px) {
   #contact {
     img.background {
       display none

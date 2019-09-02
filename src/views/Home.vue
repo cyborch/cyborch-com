@@ -146,6 +146,8 @@ small-screen-h1-color = #555555
     background: none !important
     color: small-screen-h1-color
     background-color: rgba(0,0,0,0) !important
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: small-screen-h1-color
     font-size 70pt
     line-height 70pt
   }
@@ -155,7 +157,7 @@ small-screen-h1-color = #555555
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+@media only screen and (min-device-width: 321px) and (max-device-width: 667px) {
   .backgroundclip h1 {
     position absolute
     top 280px
@@ -163,12 +165,14 @@ small-screen-h1-color = #555555
     background: none !important
     color: small-screen-h1-color
     background-color: rgba(0,0,0,0) !important
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: small-screen-h1-color
     font-size 50pt
     line-height 50pt
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-device-width: 320px) {
   #main-background {
     img {
       height 100%
@@ -185,6 +189,8 @@ small-screen-h1-color = #555555
     background-image: none !important
     color: small-screen-h1-color
     background-color: rgba(0,0,0,0) !important
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: small-screen-h1-color
     font-size 40pt
     line-height 40pt
   }
