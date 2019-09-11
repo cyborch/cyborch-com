@@ -390,12 +390,12 @@ export default class About extends Vue {
 
 @media only screen and (max-width: 1200px) {
   #about {
-    table tr, table td {
+    table.experience tr, table.experience td, table.about-intro tr, table.about-intro td {
       display block
       margin-left auto !important
       margin-right auto !important
     }
-    table td {
+    table.experience td, table.about-intro td {
       padding 0 !important
       width 100% !important
       img {
