@@ -120,7 +120,7 @@ export default class About extends Vue {
                 end: 'July to present day',
               },
               {
-                title: 'Lead iOS Engineer',
+                title: 'CTO',
                 company: 'KlikKit',
                 description: 'My role was leading a small team of 3 developers, developing the iOS BLE stack, and a backend service, as well as defining the product and managing external contractors handling Android BLE stack and hardware development. Ultimately the team wasn’t able to find funding and we had to move on.',
                 year: '2017',
