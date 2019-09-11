@@ -14,6 +14,7 @@
     </div>
     <about animateIn="true" v-if="aboutClicked"></about>
     <contact animateIn="true" v-if="contactClicked"></contact>
+    <div class="preload-images"></div>
   </div>
 </template>
 <script lang="ts">
@@ -78,6 +79,25 @@ export default class Home extends Vue {
 }
 </script>
 <style lang="stylus">
+
+.preload-images {
+  position absolute
+  top 100vh
+  left 100%
+  width 1px
+  height 1px
+  background: url('/portrait.jpg'),
+    url('/social/envelope.svg'),
+    url('/social/facebook.svg'),
+    url('/social/github.svg'),
+    url('/social/keybase.svg'),
+    url('/social/linkedin-in.svg'),
+    url('/social/skype.svg'),
+    url('/social/twitter.svg'),
+    url('/social/medium-m.svg'),
+    url('/social/instagram.svg'),
+    url('/contact.jpg');
+}
 
 #home
   .link-container
