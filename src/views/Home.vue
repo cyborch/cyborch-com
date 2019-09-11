@@ -10,7 +10,7 @@
       <img src="/background.jpg">
     </div>
     <div class="backgroundclip">
-      <h1>I<span class="accent">&#96;</span>m<br>Anders<br>Borch</h1>
+      <h1 id="hero">I<span class="accent">&#96;</span>m<br>Anders<br>Borch</h1>
     </div>
     <about animateIn="true" v-if="aboutClicked"></about>
     <contact animateIn="true" v-if="contactClicked"></contact>
@@ -36,6 +36,13 @@ export default class Home extends Vue {
       this.aboutClicked = false;
       this.contactClicked = false;
     });
+    const ua = window.navigator.userAgent;
+    if (ua.indexOf('MSIE') > 0 || ua.indexOf('Trident') > 0) {
+      const el = document.getElementById('hero');
+      if (!el) { return; }
+      el.style.background = 'none';
+      el.style.color = '#555555';
+    }
   }
 
   public about() {
