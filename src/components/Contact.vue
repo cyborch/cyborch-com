@@ -2,6 +2,9 @@
   <div id="contact">
     <div class="column">
       <appelation heading="get in touch" subHeading="be social" blockStyle="width: 300px"></appelation>
+      <div class="close-mobile" id="close-mobile">
+        <a href="/" @click.prevent="close()" ><img src="/x.svg"></a>
+      </div>
       <p>
         There are a number of ways to get in touch with me, ranging from the
         tried and true email, to Facebook or Twitter. You can also follow what
@@ -52,11 +55,21 @@
             </a>
           </td>
         </tr>
+        <tr>
+          <td>
+            <a target="_blank" href="https://instagram.com/cyborch">
+              <img class="social" src="/social/instagram.svg">
+            </a>
+          </td>
+          <td rowspan="3"></td>
+        </tr>
       </table>
     </div>
+    <div style="height: 100px"></div>
     <div class="close">
       <a href="/" @click.prevent="close()" ><img src="/x.svg"></a>
     </div>
+
     <div>
       <img class="background" src="/contact.jpg">
     </div>
@@ -77,12 +90,8 @@ export default class Contact extends Vue {
   public animateIn: boolean | undefined;
 
   public mounted() {
-    if (this.animateIn) {
-      const el = document.getElementById('contact');
-      if (!el) { return; }
-      el.classList.add('initial');
-      el.classList.add('movein');
-    }
+    this.animateInIfNeeded();
+    this.setCloseRight();
   }
 
   public close() {
@@ -95,6 +104,27 @@ export default class Contact extends Vue {
       document.location.href = '/';
     }
   }
+
+  private animateInIfNeeded() {
+    if (this.animateIn) {
+      const el = document.getElementById('contact');
+      if (!el) { return; }
+      el.classList.add('initial');
+      el.classList.add('movein');
+    }
+  }
+
+  private setCloseRight() {
+    const body = document.getElementsByTagName('body')[0];
+    const x = body.clientWidth;
+
+    if (x > 360) { return; }
+
+    const el = document.getElementById('close-mobile');
+    if (!el) { return; }
+
+    el.style.right = '-' + (x - 80) + 'px';
+  }
 }
 </script>
 <style lang="stylus">
@@ -104,6 +134,8 @@ export default class Contact extends Vue {
   height 100vh
   overflow scroll
   background-color #fafafa
+  .close-mobile
+    display none
   .close
     width 20px
     height 20px
@@ -114,9 +146,9 @@ export default class Contact extends Vue {
   img.background
     position absolute
     right 0
-    bottom 0
-    width 30%
-    height auto
+    top 70vh
+    height 30vh
+    width auto
     z-index 1
   a
     color #c600ff
@@ -184,6 +216,19 @@ export default class Contact extends Vue {
 
 @media only screen and (max-device-width: 360px) {
   #contact {
+    .close-mobile {
+      display block !important
+      width 20px
+      height 20px
+      margin 40px
+      position relative
+      top -170px
+    }
+
+    .close {
+      display none !important
+    }
+
     img.background {
       display none
     }
