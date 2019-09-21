@@ -163,7 +163,7 @@ export default class About extends Vue {
               {
                 title: 'iOS Software Manager',
                 company: 'Vodafone',
-                description: 'With Vodafone I was head of the iOS application development department. I started out in ZYB before it was acquired by Vodafone. While in ZYB I made the first version of the social networking and synchronization application. After Vodafone acquired ZYB, I became software manager for a team of 5 developers and 2 testers working on developing iOS software for Vodafones new social services.',
+                description: 'With Vodafone I was head of the iOS application development department. I started out in ZYB before it was <a target="_blank" href="https://techcrunch.com/2008/05/16/danish-mobile-social-network-zyb-acquired-by-vodafone-for-e315-million/">acquired by Vodafone</a>. While in ZYB I made the first version of the social networking and synchronization application. After Vodafone acquired ZYB, I became software manager for a team of 5 developers and 2 testers working on developing iOS software for Vodafones new social services.',
                 year: '2008',
                 end: 'Septemper to July 2010',
               },
