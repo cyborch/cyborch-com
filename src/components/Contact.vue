@@ -50,8 +50,8 @@
             </a>
           </td>
           <td>
-            <a target="_blank" href="https://medium.com/@anders.borch">
-              <img class="social" src="/social/medium-m.svg">
+            <a target="_blank" href="https://blog.cyborch.com/">
+              <img class="social" src="/social/ghost.png" style="width: 75px">
             </a>
           </td>
         </tr>
