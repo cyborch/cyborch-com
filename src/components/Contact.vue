@@ -8,7 +8,9 @@
       <p>
         There are a number of ways to get in touch with me, ranging from the
         tried and true email, to Facebook or Twitter. You can also follow what
-        I'm currently working on by looking at Medium and Github.
+        I'm currently working on by looking at
+        <a target="_blank" href="https://blog.cyborch.com/">my blog</a>
+        or Github.
       </p>
       <table>
         <tr>
