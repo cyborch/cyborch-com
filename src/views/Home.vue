@@ -135,7 +135,7 @@ export default class Home extends Vue {
   position absolute
   top 20vh
   left 40%
-  background: url('/background-dark.jpg') -200px -100px no-repeat;
+  background: url('/background-inner.jpg') -200px -100px no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: black
