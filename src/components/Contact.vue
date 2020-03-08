@@ -16,51 +16,78 @@
         <tr>
           <td>
             <a target="_blank" href="mailto:anders@cyborch.com">
-              <img class="social" src="/social/envelope.svg">
+              <picture>
+                <source srcset="/social/envelope-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/envelope.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a target="_blank" href="https://www.facebook.com/anders.cyborch">
-              <img class="social" src="/social/facebook.svg">
+              <picture>
+                <source srcset="/social/facebook-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/facebook.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a target="_blank" href="https://github.com/cyborch">
-              <img class="social" src="/social/github.svg">
+              <picture>
+                <source srcset="/social/github-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/github.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a target="_blank" href="https://keybase.io/cyborch">
-              <img class="social" src="/social/keybase.svg">
+              <picture>
+                <source srcset="/social/keybase-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/keybase.svg">
+              </picture>
             </a>
           </td>
         </tr>
         <tr>
           <td>
             <a target="_blank" href="https://linkedin.com/in/cyborch">
-              <img class="social" src="/social/linkedin-in.svg">
+              <picture>
+                <source srcset="/social/linkedin-in-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/linkedin-in.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a onclick='Skype.tryAnalyzeSkypeUri("chat", "0");' href='skype:cyborch?chat'>
-              <img class="social" src="/social/skype.svg">
+              <picture>
+                <source srcset="/social/skype-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/skype.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a target="_blank" href="https://twitter.com/cyborch">
-              <img class="social" src="/social/twitter.svg">
+              <picture>
+                <source srcset="/social/twitter-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/twitter.svg">
+              </picture>
             </a>
           </td>
           <td>
             <a target="_blank" href="https://blog.cyborch.com/">
-              <img class="social" src="/social/ghost.png" style="width: 75px">
+              <picture>
+                <source srcset="/social/ghost-darkmode.png" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/ghost.png" style="width: 75px">
+              </picture>
             </a>
           </td>
         </tr>
         <tr>
           <td>
             <a target="_blank" href="https://instagram.com/cyborch">
-              <img class="social" src="/social/instagram.svg">
+              <picture>
+                <source srcset="/social/instagram-darkmode.svg" media="(prefers-color-scheme: dark)">
+                <img class="social" src="/social/instagram.svg">
+              </picture>
             </a>
           </td>
           <td rowspan="3"></td>
@@ -73,7 +100,10 @@
     </div>
 
     <div>
-      <img class="background" src="/contact.jpg">
+      <picture>
+        <source srcset="/contact-darkmode.png" media="(prefers-color-scheme: dark)">
+        <img class="background" src="/contact.jpg">
+      </picture>
     </div>
   </div>
 </template>
@@ -214,6 +244,12 @@ export default class Contact extends Vue {
 @keyframes contact-moveout {
   from {left: 0}
   to {left: 100%}
+}
+
+@media (prefers-color-scheme: dark) {
+  #contact {
+    background-color: #080808;
+  }
 }
 
 @media only screen and (max-device-width: 360px) {

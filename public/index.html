@@ -34,6 +34,15 @@
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
     <title>Anders Borch</title>
     <style type="text/css">
+      :root {
+        color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color: #ccc;
+        }
+      }
+
       @font-face {
         font-family: 'Futura BdCn BT';
         src: url('/webfonts/FuturaBT-BoldCondensed.woff2') format('woff2'),

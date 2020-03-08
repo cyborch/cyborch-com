@@ -6,9 +6,10 @@
     <div class="link-container contact-link-container">
       <a href="/contact" @click.prevent="contact()" to="/contact" class="main-link" id="contact-link">contact</a>
     </div>
-    <div id="main-background">
+    <picture id="main-background">
+      <source srcset="/background-darkmode.png" media="(prefers-color-scheme: dark)">
       <img src="/background.jpg">
-    </div>
+    </picture>
     <div class="backgroundclip">
       <h1 id="hero">I<span class="accent">&#96;</span>m<br>Anders<br>Borch</h1>
     </div>
@@ -162,6 +163,18 @@ export default class Home extends Vue {
   right 40px
   margin-top auto
   margin-bottom auto
+
+@media (prefers-color-scheme: dark) {
+  #main-background {
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%);
+  }
+
+  #home {
+    .main-link {
+      color: #ccc;
+    }
+  }
+}
 
 small-screen-h1-color = #555555
 

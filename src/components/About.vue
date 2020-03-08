@@ -4,7 +4,10 @@
       <table class="about-intro">
         <tr>
           <td>
-            <img src="/portrait.jpg">
+            <picture>
+              <source srcset="/portrait-darkmode.png" media="(prefers-color-scheme: dark)">
+              <img src="/portrait.jpg">
+            </picture>
           </td>
           <td>
             <h1>about me</h1>
@@ -46,19 +49,31 @@
       <table class="interests">
         <tr>
           <td>
-            <img src="/interests/bike.png">
+            <picture>
+              <source srcset="/interests/bike-darkmode.png" media="(prefers-color-scheme: dark)">
+              <img src="/interests/bike.png">
+            </picture>
             <p>biking</p>
           </td>
           <td>
-            <img src="/interests/yoga.svg">
+            <picture>
+              <source srcset="/interests/yoga-darkmode.png" media="(prefers-color-scheme: dark)">
+              <img src="/interests/yoga.svg">
+            </picture>
             <p>yoga</p>
           </td>
           <td>
-            <img src="/interests/vegan.png">
+            <picture>
+              <source srcset="/interests/vegan-darkmode.png" media="(prefers-color-scheme: dark)">
+              <img src="/interests/vegan.png">
+            </picture>
             <p>vegan food</p>
           </td>
           <td>
-            <img src="/interests/puppies.png">
+            <picture>
+              <source srcset="/interests/puppies-darkmode.png" media="(prefers-color-scheme: dark)">
+              <img src="/interests/puppies.png">
+            </picture>
             <p>puppies</p>
           </td>
         </tr>
@@ -237,7 +252,6 @@ export default class About extends Vue {
           height auto
           min-width 360px
     h1
-      color black
       text-transform uppercase
       font-size 30pt
       font-weight 600
@@ -386,6 +400,30 @@ export default class About extends Vue {
 @keyframes about-moveout {
   from {top: 0}
   to {top: -100vh}
+}
+
+@media (prefers-color-scheme: dark) {
+  #about {
+    .column {
+      .subtitle-divider {
+        background-color: #ccc;
+      }
+    }
+
+    background-color: #080808;
+    table.experience {
+      td > .position {
+        h2, h3, p {
+          background-color #111
+        }
+      }
+      td:hover > .position {
+        h2, h3, p {
+          background-color #151515 !important
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1200px) {

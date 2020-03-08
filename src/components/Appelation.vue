@@ -32,7 +32,6 @@ div.title
   display: flex
   justify-content: center
   h1
-    color black
     text-transform uppercase
     font-size 30pt
     font-weight 600
@@ -51,4 +50,13 @@ div.title
     height 2px
     margin-top 24px
     margin-right 10px
+
+@media (prefers-color-scheme: dark) {
+  div.title {
+    .subtitle-divider {
+      background-color: #ccc !important;
+    }
+  }
+}
+
 </style>
