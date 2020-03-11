@@ -176,6 +176,16 @@ export default class Home extends Vue {
   }
 }
 
+@media only screen and (prefers-color-scheme: dark) and (max-width: 1140px) {
+  .backgroundclip h1 {
+    background: none !important
+    color: #ccc !important
+    background-color: #ccc !important
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: #ccc !important
+  }
+}
+
 small-screen-h1-color = #555555
 
 @media only screen and (max-width: 1140px) {
