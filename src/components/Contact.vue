@@ -102,7 +102,7 @@
     <div>
       <picture>
         <source srcset="/contact-darkmode.png" media="(prefers-color-scheme: dark)">
-        <img class="background" src="/contact.jpg">
+        <img id="contact-background" src="/contact.jpg">
       </picture>
     </div>
   </div>
@@ -128,9 +128,14 @@ export default class Contact extends Vue {
 
   public close() {
     if (history.state && history.state.pushed === true && (this.$parent as Home).closeContact) {
-      const el = document.getElementById('contact');
+      let el = document.getElementById('contact');
       if (!el) { return; }
       el.classList.add('moveout');
+
+      el = document.getElementById('contact-background');
+      if (!el) { return; }
+      el.classList.add('moveout');
+
       (this.$parent as Home).closeContact();
     } else {
       document.location.href = '/';
@@ -139,7 +144,12 @@ export default class Contact extends Vue {
 
   private animateInIfNeeded() {
     if (this.animateIn) {
-      const el = document.getElementById('contact');
+      let el = document.getElementById('contact');
+      if (!el) { return; }
+      el.classList.add('initial');
+      el.classList.add('movein');
+
+      el = document.getElementById('contact-background');
       if (!el) { return; }
       el.classList.add('initial');
       el.classList.add('movein');
@@ -175,13 +185,6 @@ export default class Contact extends Vue {
     position absolute
     top 0
     right 0
-  img.background
-    position absolute
-    right 0
-    top 70vh
-    height 30vh
-    width auto
-    z-index 1
   a
     color #c600ff
   .column
@@ -210,6 +213,30 @@ export default class Contact extends Vue {
       text-align center
       height 140px
 
+#contact-background
+  position fixed
+  right 0
+  bottom 0
+  height 30vh
+  width auto
+  z-index 1
+
+#contact-background.initial
+  position fixed
+  right 0
+  bottom 0
+
+#contact-background.movein
+  right 0
+  bottom 0
+  animation-name contact-background-movein
+  animation-duration 0.5s
+
+#contact-background.moveout
+  right 0
+  bottom 0
+  animation-name contact-background-moveout
+  animation-duration 0.5s
 
 #contact.initial
   position absolute
@@ -244,6 +271,26 @@ export default class Contact extends Vue {
 @keyframes contact-moveout {
   from {left: 0}
   to {left: 100%}
+}
+
+@-webkit-keyframes contact-background-movein {
+  from {right: -100vw}
+  to {right: 0}
+}
+
+@keyframes contact-background-movein {
+  from {right: -100vw}
+  to {right: 0}
+}
+
+@-webkit-keyframes contact-background-moveout {
+  from {right: 0}
+  to {right: -100vw}
+}
+
+@keyframes contact-background-moveout {
+  from {right: 0}
+  to {right: -100vw}
 }
 
 @media (prefers-color-scheme: dark) {
