@@ -39,7 +39,7 @@
           </td>
         </tr>
       </table>
-      <appelation heading="early experience" subHeading="long ago" blockStyle="width: 440px"></appelation>
+      <appelation heading="early experience" subHeading="long ago" blockStyle="margin-left: 20px;width: 440px"></appelation>
       <p class="early">
         My earlier work experience includes NeoConsult (2005 - 2006),
         ComX Networks (2002 - 2005) and Netropolis (1998 - 2002). Please feel
@@ -461,6 +461,11 @@ export default class About extends Vue {
 @media only screen and (max-width: 768px) {
   #about {
     overflow-x hidden
+    table.about-intro td p {
+      padding-right 20px
+      margin-right 20px
+    }
+
     table.experience td p {
       margin-left 0
     }
