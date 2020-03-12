@@ -458,4 +458,36 @@ export default class About extends Vue {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #about {
+    overflow-x hidden
+    table.experience td p {
+      margin-left 0
+    }
+    .column h2.position-year {
+      font-size 60pt
+      left -205px
+      top -15px
+    }
+    .column h3.position-end {
+      top 85px
+      left -190px
+      font-size 14pt
+    }
+    td > .position {
+      h2 {
+        min-height 60px
+      }
+      h2, h3 {
+        padding-left 180px !important
+        margin-left 30px !important
+      }
+      p {
+        padding-left 10px !important
+        margin-left 30px !important
+      }
+    }
+  }
+}
+
 </style>
