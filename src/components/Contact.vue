@@ -299,6 +299,26 @@ export default class Contact extends Vue {
   }
 }
 
+@media only screen and (max-device-width: 768px) {
+  #contact-background {
+    position relative
+    bottom auto !important
+    left calc(100vw - 100px)
+    height auto !important
+    width 100px !important
+    top -50px
+  }
+
+  #contact-background.initial {
+    position relative
+    bottom auto !important
+    left calc(100vw - 100px)
+    height auto !important
+    width 100px !important
+    top -50px
+  }
+}
+
 @media only screen and (max-device-width: 360px) {
   #contact {
     .close-mobile {
@@ -314,9 +334,6 @@ export default class Contact extends Vue {
       display none !important
     }
 
-    img.background {
-      display none
-    }
   }
 }
 </style>
