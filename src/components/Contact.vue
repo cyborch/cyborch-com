@@ -109,6 +109,8 @@
 </template>
 <script lang="ts">
 import { Prop, Component, Vue } from 'vue-property-decorator';
+// @ts-ignore
+import innerHeight from 'ios-inner-height';
 import Home from '@/views/Home.vue';
 import Appelation from '@/components/Appelation.vue';
 
@@ -124,6 +126,8 @@ export default class Contact extends Vue {
   public mounted() {
     this.animateInIfNeeded();
     this.setCloseRight();
+    this.resetBackgroundPosition();
+    window.addEventListener('resize', this.resetBackgroundPosition);
   }
 
   public close() {
@@ -140,6 +144,16 @@ export default class Contact extends Vue {
     } else {
       document.location.href = '/';
     }
+  }
+
+  private resetBackgroundPosition() {
+    if (!navigator.userAgent.match(/iphone|ipod|ipad/i)) { return; }
+    const inner = innerHeight();
+    const outer = document.documentElement.clientHeight;
+    const diff = (outer - inner) * 1.5;
+    const el = document.getElementById('contact-background');
+    if (!el) { return; }
+    el.style.top = diff + 'px';
   }
 
   private animateInIfNeeded() {
