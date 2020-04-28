@@ -4,7 +4,12 @@ metadata:
   name: cyborch-com-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
+  tls:
+  - hosts:
+    - cyborch.com
+    secretName: cyborch-com-tls
   rules:
   - host: cyborch.com
     http:
