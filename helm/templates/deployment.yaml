@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cyborch-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cyborch-com
+  template:
+    metadata:
+      labels:
+        app: cyborch-com
+    spec:
+      containers:
+      - name: cyborch-com
+        image: cyborch/cyborch-com
+        ports:
+        - containerPort: 80
