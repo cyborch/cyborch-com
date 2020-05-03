@@ -6,7 +6,7 @@
           <td>
             <picture>
               <source srcset="/portrait-darkmode.png" media="(prefers-color-scheme: dark)">
-              <img src="/portrait.jpg">
+              <img src="/portrait.jpf">
             </picture>
           </td>
           <td>

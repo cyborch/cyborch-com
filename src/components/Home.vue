@@ -8,7 +8,7 @@
     </div>
     <picture id="main-background">
       <source srcset="/background-darkmode.png" media="(prefers-color-scheme: dark)">
-      <img src="/background.jpg">
+      <img src="/background.jpf">
     </picture>
     <div class="backgroundclip">
       <h1 id="hero">I<span class="accent">&#96;</span>m<br>Anders<br>Borch</h1>
@@ -88,7 +88,7 @@ export default class Home extends Vue {
   left 100%
   width 1px
   height 1px
-  background: url('/portrait.jpg'),
+  background: url('/portrait.jpf'),
     url('/social/envelope.svg'),
     url('/social/facebook.svg'),
     url('/social/github.svg'),
@@ -98,7 +98,7 @@ export default class Home extends Vue {
     url('/social/twitter.svg'),
     url('/social/medium-m.svg'),
     url('/social/instagram.svg'),
-    url('/contact.jpg');
+    url('/contact.jpf');
 }
 
 #home
@@ -124,7 +124,7 @@ export default class Home extends Vue {
   left 0
   width 100%
   height 100vh
-  background: url('/background-overflow.jpg') repeat-x right top fixed;
+  background: url('/background-overflow.jpf') repeat-x right top fixed;
   background-size contain
   img
     height 100%

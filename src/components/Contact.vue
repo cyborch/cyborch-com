@@ -102,7 +102,7 @@
     <div>
       <picture>
         <source srcset="/contact-darkmode.png" media="(prefers-color-scheme: dark)">
-        <img id="contact-background" src="/contact.jpg">
+        <img id="contact-background" src="/contact.jpf">
       </picture>
     </div>
   </div>
