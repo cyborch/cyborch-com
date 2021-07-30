@@ -128,11 +128,11 @@ export default class About extends Vue {
       experienceRows: [
             [
               {
-                title: 'Emerging Technology Evangelist',
+                title: 'Senior Software Engineer',
                 company: 'Tradeshift',
                 description: 'Tradeshift Frontiers is the emerging technology department of Tradeshift, which does R&amp;D in all things that has to do with IoT, blockchain, and AI. My role is that of researching, prototyping, and demonstrating uses for emerging technologies, especially with a focus on IoT. On a daily basis I work with LoRa, Bluetooth, and development of mobile, web, and backend solutions.',
                 year: '2018',
-                end: 'July to present day',
+                end: 'July to December 2020',
               },
               {
                 title: 'CTO',
