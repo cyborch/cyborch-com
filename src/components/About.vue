@@ -14,11 +14,11 @@
             <div class="subtitle-divider"></div>
             <p class="subtitle">who am i</p>
             <p>
-              I am a leader, a yoga teacher and a software engineer. I have worked
-              in software engineering in 20 years and have over 7 years of
-              management experience. I moved from Denmark to America 7 years ago,
-              lived in Spain for a short while and moved back to Denmark a couple
-              of years ago.
+              I am a software engineer, a designer and an entrepreneur. I have
+              worked in software engineering for 20 years and have over 7 years
+              of management experience. I moved from Denmark to America 7 years
+              ago, lived in Spain for a short while and moved back to Denmark
+              few years ago.
             </p>
           </td>
         </tr>
