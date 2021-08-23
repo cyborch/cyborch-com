@@ -18,7 +18,8 @@
               worked in software engineering for 20 years and have over 7 years
               of management experience. I moved from Denmark to America 7 years
               ago, lived in Spain for a short while and moved back to Denmark
-              few years ago.
+              few years ago. I am currently self-employed, working as a
+              consultant.
             </p>
           </td>
         </tr>
