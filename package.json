@@ -9,17 +9,17 @@
   },
   "dependencies": {
     "ios-inner-height": "^1.1.1",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.1.0",
-    "vue-router": "^3.0.3"
+    "vue": "^2.6.14",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^8.5.1",
+    "vue-router": "^3.5.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "stylus": "^0.54.5",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
-    "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "typescript": "^3.9.10",
+    "vue-template-compiler": "^2.6.14"
   }
 }
