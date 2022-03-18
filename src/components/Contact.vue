@@ -18,7 +18,7 @@
             <a target="_blank" href="mailto:anders@cyborch.com">
               <picture>
                 <source srcset="/social/envelope-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/envelope.svg">
+                <img class="social" src="/social/envelope.svg" alt="Email">
               </picture>
             </a>
           </td>
@@ -26,7 +26,7 @@
             <a target="_blank" href="https://www.facebook.com/anders.cyborch">
               <picture>
                 <source srcset="/social/facebook-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/facebook.svg">
+                <img class="social" src="/social/facebook.svg" alt="Facebook">
               </picture>
             </a>
           </td>
@@ -34,7 +34,7 @@
             <a target="_blank" href="https://github.com/cyborch">
               <picture>
                 <source srcset="/social/github-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/github.svg">
+                <img class="social" src="/social/github.svg" alt="Github">
               </picture>
             </a>
           </td>
@@ -42,7 +42,7 @@
             <a target="_blank" href="https://keybase.io/cyborch">
               <picture>
                 <source srcset="/social/keybase-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/keybase.svg">
+                <img class="social" src="/social/keybase.svg" alt="Keybase">
               </picture>
             </a>
           </td>
@@ -52,7 +52,7 @@
             <a target="_blank" href="https://linkedin.com/in/cyborch">
               <picture>
                 <source srcset="/social/linkedin-in-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/linkedin-in.svg">
+                <img class="social" src="/social/linkedin-in.svg" alt="LinkedIn">
               </picture>
             </a>
           </td>
@@ -60,7 +60,7 @@
             <a onclick='Skype.tryAnalyzeSkypeUri("chat", "0");' href='skype:cyborch?chat'>
               <picture>
                 <source srcset="/social/skype-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/skype.svg">
+                <img class="social" src="/social/skype.svg" alt="Skype">
               </picture>
             </a>
           </td>
@@ -68,7 +68,7 @@
             <a target="_blank" href="https://twitter.com/cyborch">
               <picture>
                 <source srcset="/social/twitter-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/twitter.svg">
+                <img class="social" src="/social/twitter.svg" alt="Twitter">
               </picture>
             </a>
           </td>
@@ -76,7 +76,7 @@
             <a target="_blank" href="https://blog.cyborch.com/">
               <picture>
                 <source srcset="/social/ghost-darkmode.png" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/ghost.png" style="width: 75px">
+                <img class="social" src="/social/ghost.png" style="width: 75px" alt="Blog">
               </picture>
             </a>
           </td>
@@ -86,7 +86,7 @@
             <a target="_blank" href="https://instagram.com/cyborch">
               <picture>
                 <source srcset="/social/instagram-darkmode.svg" media="(prefers-color-scheme: dark)">
-                <img class="social" src="/social/instagram.svg">
+                <img class="social" src="/social/instagram.svg" alt="Instagram">
               </picture>
             </a>
           </td>
