@@ -1,0 +1,30 @@
+div.title
+  display: flex
+  justify-content: center
+  h1
+    text-transform uppercase
+    font-size 30pt
+    font-weight 600
+    margin-bottom -15px
+  .subtitle
+    float clear
+    color #c600ff !important
+    text-transform uppercase
+    font-weight 600 !important
+    font-size 12pt !important
+  .subtitle-divider
+    background-color black
+    display inline-block
+    float left
+    width 170px
+    height 2px
+    margin-top 24px
+    margin-right 10px
+
+@media (prefers-color-scheme: dark) {
+  div.title {
+    .subtitle-divider {
+      background-color: #ccc !important;
+    }
+  }
+}

@@ -1,25 +1,30 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "cyborch-com",
   "private": true,
+  "description": "cyborch.com website",
+  "version": "0.1.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "ios-inner-height": "^1.1.1",
-    "vue": "2.6.14",
-    "vue-class-component": "7.2.6",
-    "vue-property-decorator": "8.5.1",
-    "vue-router": "3.5.2"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "4.5.13",
-    "@vue/cli-service": "4.5.13",
-    "stylus": "^0.54.8",
-    "stylus-loader": "^3.0.2",
-    "typescript": "^3.9.10",
-    "vue-template-compiler": "2.6.14"
+    "gatsby": "^4.10.0",
+    "gatsby-plugin-react-helmet": "^5.10.0",
+    "gatsby-plugin-stylus": "^4.10.0",
+    "prettier": "^2.5.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "ios-inner-height": "^1.1.1"
   }
 }
