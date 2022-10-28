@@ -15,5 +15,8 @@ spec:
       containers:
       - name: cyborch-com
         image: cyborch/cyborch-com
+        resources:
+          requests:
+            memory: "32Mi"
         ports:
         - containerPort: 80
