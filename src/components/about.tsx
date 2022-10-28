@@ -185,6 +185,10 @@ export default class About extends Component<AboutProps, AboutProps> {
             </tr>
           </table>
           <Title heading="experience" subHeading="involvement" blockStyle={{ width: '320px' }}></Title>
+          <p className="experience">
+            My work experience can be see below, but it is also available as 
+            a <a href="/cv.pdf">PDF</a> for offline viewing.
+          </p>
           <table className="experience">
             { this.renderExperienceRows() }
           </table>
