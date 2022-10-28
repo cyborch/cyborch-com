@@ -99,7 +99,7 @@ export default class About extends Component<AboutProps, AboutProps> {
             a <a href="/cv">pdf</a> for offline viewing. I did spend a lot of time
             desiging that resume layout and I really appreciate it if that is what
             you reference, but if you are a recruiter and just want to import my data
-            in your database, then it is available as 
+            into your database, then it is available as 
             a <a href="/csv">spreadsheet</a> too.
           </p>
           <table className="experience">
