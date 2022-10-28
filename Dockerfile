@@ -5,6 +5,7 @@ RUN npm install -g gatsby-cli
 WORKDIR /app
 COPY ./package*.json ./
 RUN npm install
+RUN npx gatsby telemetry --disable
 COPY ./ ./
 RUN npm run build
 
