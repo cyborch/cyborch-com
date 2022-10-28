@@ -21,6 +21,22 @@ export default class About extends Component<AboutProps, AboutProps> {
     [
       {
         title: 'Senior Software Engineer',
+        company: 'Normative',
+        description: 'My role is to maintain and update carbon calculation software, and to ensure its reliability and scalability as the company is scaling up and maturing.',
+        year: '2021',
+        end: 'April',
+      },
+      {
+        title: 'Software Engineer',
+        company: 'Dawn Health',
+        description: 'I was building software to measure patient health using Six Minute Walk Test measurements, as well as updating software for existing MotivO solution to bring it to new markets in APAC.',
+        year: '2021',
+        end: 'January to May 2021',
+      },
+    ],
+    [
+      {
+        title: 'Senior Software Engineer',
         company: 'Tradeshift',
         description: 'Tradeshift Frontiers is the emerging technology department of Tradeshift, which does R&amp;D in all things that has to do with IoT, blockchain, and AI. My role is that of researching, prototyping, and demonstrating uses for emerging technologies, especially with a focus on IoT. On a daily basis I work with LoRa, Bluetooth, and development of mobile, web, and backend solutions.',
         year: '2018',
