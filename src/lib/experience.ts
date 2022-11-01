@@ -29,7 +29,7 @@ export const experience: Experience[][] = [
 
       from: '01-04-2021',
       to: today,
-      keywords: 'Python, React, Docker, AWS',
+      keywords: 'Python, React, Docker, AWS, Rundeck',
     },
     {
       title: 'Software Engineer',
@@ -68,7 +68,7 @@ export const experience: Experience[][] = [
       from: '01-06-2017',
       to: '31-06-2018',
       keywords:
-        'BLE, Node, iOS, Android, MongoDB, Docker, ReactNative, AWS, Design',
+        'BLE, Node, iOS, Android, MongoDB, Docker, ReactNative, AWS, Design, Terraform',
     },
   ],
   [
