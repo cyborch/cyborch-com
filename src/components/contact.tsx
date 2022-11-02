@@ -10,8 +10,8 @@ declare var Skype: {
 };
 
 interface ContactProps {
-  animated: boolean;
-  closeContact: Function;
+  animated?: boolean;
+  closeContact?: Function;
 }
 
 export default class Contact extends Component<ContactProps, ContactProps> {
@@ -80,7 +80,7 @@ export default class Contact extends Component<ContactProps, ContactProps> {
       if (!el) { return; }
       el.classList.add('moveout');
 
-      this.state.closeContact();
+      if (this.state.closeContact) this.state.closeContact();
     } else {
       document.location.href = '/';
     }
