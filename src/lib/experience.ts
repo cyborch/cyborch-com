@@ -41,7 +41,7 @@ export const experience: Experience[][] = [
 
       from: '01-01-2021',
       to: '31-03-2021',
-      keywords: 'iOS, Go, IoT, ReactNative',
+      keywords: 'iOS, Go, IoT, Java, ReactNative',
     },
   ],
   [
@@ -68,7 +68,7 @@ export const experience: Experience[][] = [
       from: '01-06-2017',
       to: '31-06-2018',
       keywords:
-        'BLE, Node, iOS, Android, MongoDB, Docker, ReactNative, AWS, Design, Terraform',
+        'BLE, Node, iOS, Java, Android, MongoDB, Docker, ReactNative, AWS, Design, Terraform',
     },
   ],
   [
