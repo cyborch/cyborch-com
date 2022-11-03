@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <Layout>
       <Meta></Meta>
-      <About></About>
+      <About animated={false} closeAbout={() => {}}></About>
     </Layout>
   )
 }
