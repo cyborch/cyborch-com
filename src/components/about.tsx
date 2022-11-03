@@ -100,7 +100,7 @@ export default class About extends Component<AboutProps, AboutProps> {
             desiging that resume layout and I really appreciate it if that is what
             you reference, but if you are a recruiter and just want to import my data
             into your database, then it is available as 
-            a <a href="/csv">spreadsheet</a> too.
+            a <a href="/cv.csv" download>spreadsheet</a> too.
           </p>
           <table className="experience">
             { this.renderExperienceRows() }
