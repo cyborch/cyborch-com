@@ -7,7 +7,6 @@ cd "$(dirname "$0")/.."
 docker build -t cyborch/cyborch-com:latest .
 # docker-squash cyborch/cyborch-com -t cyborch/cyborch-com:latest
 docker push cyborch/cyborch-com:latest
-helm uninstall cyborch-com || true
-helm install cyborch-com ./helm
+helm upgrade -i cyborch-com ./helm
 echo ""
 echo 👑 successfully deployed!

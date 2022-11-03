@@ -9,12 +9,15 @@ spec:
       app: cyborch-com
   template:
     metadata:
+      annotations:
+        timestamp: {{ now | quote }}
       labels:
         app: cyborch-com
     spec:
       containers:
       - name: cyborch-com
-        image: cyborch/cyborch-com
+        image: cyborch/cyborch-com:latest
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "32Mi"
