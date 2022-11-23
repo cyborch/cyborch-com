@@ -1,6 +1,6 @@
 FROM node:16 as devel
 
-RUN npm install -g gatsby-cli
+RUN npm install -g gatsby-cli@4.10
 
 WORKDIR /app
 COPY ./package*.json ./
