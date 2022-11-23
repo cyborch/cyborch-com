@@ -154,10 +154,10 @@ export default class Contact extends Component<ContactProps, ContactProps> {
                 </a>
               </td>
               <td>
-                <a target="_blank" href="https://twitter.com/cyborch">
+                <a rel="me" target="_blank" href="https://mastodon.cyborch.com/@anders">
                   <picture>
-                    <source srcSet="/social/twitter-darkmode.svg" media="(prefers-color-scheme: dark)" />
-                    <img className="social" src="/social/twitter.svg" alt="Twitter" />
+                    <source srcSet="/social/mastodon-darkmode.png" media="(prefers-color-scheme: dark)" />
+                    <img className="social" src="/social/mastodon.png" alt="Mastodon" />
                   </picture>
                 </a>
               </td>

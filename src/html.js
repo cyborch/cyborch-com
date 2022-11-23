@@ -9,7 +9,7 @@ export default function HTML(props) {
     "url": "https://cyborch.com/",
     "sameAs": [
       "https://linkedin.com/in/cyborch",
-      "https://twitter.com/cyborch",
+      "https://mastodon.cyborch.com/@anders",
       "https://www.facebook.com/anders.cyborch",
       "https://www.instagram.com/cyborch/",
       "https://github.com/cyborch",
@@ -38,6 +38,10 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        { /* hidden mastodon backlink for verification purposes */ }
+        <div style={{display: 'none'}}>
+          <a rel="me" href="https://mastodon.cyborch.com/@anders">Mastodon</a>
+        </div>
       </body>
     </html>
   )
